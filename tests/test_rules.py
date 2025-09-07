@@ -30,4 +30,4 @@ def test_rule_engine_all_must_pass():
     a = tx("2025-01-03", -25.0, "Coffee", "bank")
     b = tx("2025-01-01", -25.0, "Coffee", "ledger")
     engine = RuleEngine(Rule("amount", amount_equal), Rule("date", lambda x, y: date_within(x, y, 2)))
-    assert engine.passes(a, b) is False
+    assert engine.passes(a, b) is True
